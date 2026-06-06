@@ -1,0 +1,44 @@
+# Core RAG stack
+langchain>=0.2.0
+langchain-text-splitters>=0.2.0
+langchain-community>=0.2.0
+
+# Embeddings
+sentence-transformers>=2.7.0
+torch>=2.0.0
+
+# Vector DB
+chromadb>=0.5.0
+
+# PDF extraction
+PyMuPDF>=1.24.0
+
+# LLM client (Groq / Ollama / OpenAI-compatible)
+openai>=1.30.0
+
+# Web API
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# Streamlit UI
+streamlit>=1.36.0
+
+# chainlit UI
+chainlit>=2.11.0
+
+# Evaluation
+ragas>=0.1.14
+datasets>=2.20.0
+
+# Data & utilities
+pandas>=2.2.0
+numpy>=1.26.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# Optional: cross-encoder re-ranker (uncomment to enable)
+# sentence-transformers cross-encoder/ms-marco-MiniLM-L-6-v2 is downloaded on demand

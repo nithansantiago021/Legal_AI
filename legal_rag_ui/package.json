@@ -1,0 +1,16 @@
+{
+  "name": "legal-rag-ui",
+  "version": "1.0.0",
+  "description": "Premium UI for the Legal Intelligence RAG Assistant",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "express": "^4.19.0",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}

@@ -1,0 +1,520 @@
+2026-06-02 11:07:41,667 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 11:08:14,583 | INFO     | src.embedding.embedder | Model loaded in 32.92s
+2026-06-02 11:08:14,584 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 11:08:14,710 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-02 11:10:40,352 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 11:10:46,727 | INFO     | src.embedding.embedder | Model loaded in 6.37s
+2026-06-02 11:10:46,727 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 11:10:46,813 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-02 11:23:30,043 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 11:23:36,530 | INFO     | src.embedding.embedder | Model loaded in 6.49s
+2026-06-02 11:23:36,531 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 11:23:36,621 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-02 11:24:02,170 | INFO     | src.embedding.indexer | 📄 Loading: tmptdsy1rdi.txt
+2026-06-02 11:24:02,171 | INFO     | src.preprocessing.preprocessor | Loading document: tmptdsy1rdi.txt
+2026-06-02 11:24:02,173 | INFO     | src.embedding.indexer | ✂️  Chunking: tmptdsy1rdi.txt
+2026-06-02 11:24:02,178 | INFO     | src.preprocessing.preprocessor | Document 'tmptdsy1rdi.txt' → 40 chunks
+2026-06-02 11:24:02,179 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-02 11:24:03,626 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 1.4s
+2026-06-02 11:24:03,627 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-02 11:24:03,697 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 40
+2026-06-02 11:24:03,697 | INFO     | src.embedding.indexer | ✅ Indexed 'tmptdsy1rdi.txt': 40 chunks stored
+2026-06-02 11:24:10,908 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is it about?...' (top sim=0.546)
+2026-06-02 11:24:10,908 | INFO     | src.rag.rag_pipeline | Calling LLM 'mixtral-8x7b-32768' with ~605 prompt tokens
+2026-06-02 11:24:11,304 | ERROR    | src.rag.rag_pipeline | LLM call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-06-02 11:24:11,308 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=448ms
+2026-06-02 11:38:54,210 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 11:39:00,476 | INFO     | src.embedding.embedder | Model loaded in 6.27s
+2026-06-02 11:39:00,477 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 11:39:00,569 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 18:14:15,697 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 18:14:22,045 | INFO     | src.embedding.embedder | Model loaded in 6.35s
+2026-06-02 18:14:22,045 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 18:14:22,192 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 18:21:54,595 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is present in this document?...' (top sim=0.631)
+2026-06-02 18:21:54,595 | INFO     | src.rag.rag_pipeline | Calling LLM 'mixtral-8x7b-32768' with ~537 prompt tokens
+2026-06-02 18:21:55,020 | ERROR    | src.rag.rag_pipeline | LLM call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-06-02 18:21:55,023 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=587ms
+2026-06-02 18:22:29,216 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:22:29,257 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:22:29,288 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:22:29,375 | ERROR    | src.rag.rag_pipeline | Summarisation failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-06-02 18:35:30,301 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:35:30,345 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:35:30,378 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:35:30,450 | ERROR    | src.rag.rag_pipeline | Summarisation failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-06-02 18:41:36,936 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 18:41:43,178 | INFO     | src.embedding.embedder | Model loaded in 6.24s
+2026-06-02 18:41:43,179 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 18:41:43,286 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 18:41:47,368 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:41:47,407 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:41:47,440 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:41:47,718 | ERROR    | src.rag.rag_pipeline | Summarisation failed: 404 page not found
+2026-06-02 18:41:48,772 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:41:48,816 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:41:48,849 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:41:48,852 | ERROR    | src.rag.rag_pipeline | Summarisation failed: 404 page not found
+2026-06-02 18:42:05,939 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:42:05,990 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:42:06,023 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:42:06,027 | ERROR    | src.rag.rag_pipeline | Summarisation failed: 404 page not found
+2026-06-02 18:42:07,200 | INFO     | src.embedding.indexer | 📄 Loading: tmpp8rtdln9.txt
+2026-06-02 18:42:07,200 | INFO     | src.preprocessing.preprocessor | Loading document: tmpp8rtdln9.txt
+2026-06-02 18:42:07,201 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpp8rtdln9.txt
+2026-06-02 18:42:07,204 | INFO     | src.preprocessing.preprocessor | Document 'tmpp8rtdln9.txt' → 40 chunks
+2026-06-02 18:42:07,204 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-02 18:42:08,252 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 1.0s
+2026-06-02 18:42:08,252 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-02 18:42:08,305 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 80
+2026-06-02 18:42:08,305 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpp8rtdln9.txt': 40 chunks stored
+2026-06-02 18:42:15,711 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:42:15,756 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:42:15,786 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:42:15,788 | ERROR    | src.rag.rag_pipeline | Summarisation failed: 404 page not found
+2026-06-02 18:42:26,276 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'what is it about?...' (top sim=0.546)
+2026-06-02 18:42:26,276 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~416 prompt tokens
+2026-06-02 18:42:26,280 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 18:42:26,282 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=47ms
+2026-06-02 18:42:43,388 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='e14a923e7a2d9384'
+2026-06-02 18:42:46,376 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='946a51ae7516ca62'
+2026-06-02 18:42:58,109 | INFO     | src.embedding.indexer | 📄 Loading: tmpdm4mdg75.txt
+2026-06-02 18:42:58,111 | INFO     | src.preprocessing.preprocessor | Loading document: tmpdm4mdg75.txt
+2026-06-02 18:42:58,113 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpdm4mdg75.txt
+2026-06-02 18:42:58,117 | INFO     | src.preprocessing.preprocessor | Document 'tmpdm4mdg75.txt' → 40 chunks
+2026-06-02 18:42:58,118 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-02 18:42:59,170 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 1.1s
+2026-06-02 18:42:59,171 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-02 18:42:59,217 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 40
+2026-06-02 18:42:59,218 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpdm4mdg75.txt': 40 chunks stored
+2026-06-02 18:57:02,880 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 18:57:08,960 | INFO     | src.embedding.embedder | Model loaded in 6.08s
+2026-06-02 18:57:08,961 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 18:57:09,112 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 18:57:27,173 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.647)
+2026-06-02 18:57:27,223 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.729)
+2026-06-02 18:57:27,263 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.687)
+2026-06-02 18:57:27,592 | ERROR    | src.rag.rag_pipeline | Summarisation failed: 404 page not found
+2026-06-02 18:57:50,564 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the termination clause?...' (top sim=0.726)
+2026-06-02 18:57:50,565 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-02 18:57:50,568 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 18:57:50,571 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=51ms
+2026-06-02 18:58:10,314 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='ab8ba279a40cce51'
+2026-06-02 18:58:21,975 | INFO     | src.embedding.indexer | 📄 Loading: tmpd0tdfra3.txt
+2026-06-02 18:58:21,976 | INFO     | src.preprocessing.preprocessor | Loading document: tmpd0tdfra3.txt
+2026-06-02 18:58:21,978 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpd0tdfra3.txt
+2026-06-02 18:58:21,981 | INFO     | src.preprocessing.preprocessor | Document 'tmpd0tdfra3.txt' → 40 chunks
+2026-06-02 18:58:21,983 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-02 18:58:23,135 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 1.2s
+2026-06-02 18:58:23,136 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-02 18:58:23,183 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 40
+2026-06-02 18:58:23,184 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpd0tdfra3.txt': 40 chunks stored
+2026-06-02 18:58:33,450 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination cluase?...' (top sim=0.626)
+2026-06-02 18:58:33,450 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-02 18:58:33,453 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 18:58:33,453 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=50ms
+2026-06-02 18:58:44,694 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what are the payment terms?...' (top sim=0.663)
+2026-06-02 18:58:44,694 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~707 prompt tokens
+2026-06-02 18:58:44,697 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 18:58:44,698 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=69ms
+2026-06-02 18:59:58,557 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 19:00:04,864 | INFO     | src.embedding.embedder | Model loaded in 6.31s
+2026-06-02 19:00:04,864 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 19:00:04,967 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 19:00:07,997 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-02 19:00:07,997 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral:latest' with ~618 prompt tokens
+2026-06-02 19:00:08,283 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 19:00:08,286 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=342ms
+2026-06-02 19:03:41,324 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the termination clause?...' (top sim=0.726)
+2026-06-02 19:03:41,325 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral:latest' with ~618 prompt tokens
+2026-06-02 19:03:41,329 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 19:03:41,330 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=55ms
+2026-06-02 19:04:00,050 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 19:04:06,370 | INFO     | src.embedding.embedder | Model loaded in 6.32s
+2026-06-02 19:04:06,371 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 19:04:06,470 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 19:04:24,540 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the termination clause?...' (top sim=0.726)
+2026-06-02 19:04:24,540 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-02 19:04:24,823 | ERROR    | src.rag.rag_pipeline | LLM call failed: 404 page not found
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 242, in run
+    response = self._client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: 404 page not found
+2026-06-02 19:04:24,825 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=336ms
+2026-06-02 19:12:07,817 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 19:12:14,204 | INFO     | src.embedding.embedder | Model loaded in 6.39s
+2026-06-02 19:12:14,205 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 19:12:14,356 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 19:15:06,287 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 19:15:12,289 | INFO     | src.embedding.embedder | Model loaded in 6.00s
+2026-06-02 19:15:12,289 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 19:15:12,300 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 19:15:25,733 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the termination clause?...' (top sim=0.726)
+2026-06-02 19:15:25,734 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-02 19:17:25,837 | ERROR    | src.rag.rag_pipeline | LLM call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+Traceback (most recent call last):
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 258, in run
+    answer = _call_ollama([
+             ^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 69, in _call_ollama
+    response = _requests.post(
+               ^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+2026-06-02 19:17:25,852 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=120301ms
+2026-06-02 19:20:46,167 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the payment due date?...' (top sim=0.766)
+2026-06-02 19:20:46,168 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~695 prompt tokens
+2026-06-02 19:22:46,270 | ERROR    | src.rag.rag_pipeline | LLM call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+Traceback (most recent call last):
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 1415, in getresponse
+    response.begin()
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 330, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/http/client.py", line 291, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 258, in run
+    answer = _call_ollama([
+             ^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/Documents/legal_rag_project/legal_rag/src/rag/rag_pipeline.py", line 69, in _call_ollama
+    response = _requests.post(
+               ^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nithan-b-s/miniconda3/envs/rag/lib/python3.11/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)
+2026-06-02 19:22:46,274 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=False, faithfulness=1.000, latency=120164ms
+2026-06-02 19:24:31,143 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-02 19:24:37,338 | INFO     | src.embedding.embedder | Model loaded in 6.19s
+2026-06-02 19:24:37,339 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-02 19:24:37,442 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-02 19:24:49,248 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the payment due date?...' (top sim=0.766)
+2026-06-02 19:24:49,248 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~695 prompt tokens
+2026-06-02 19:25:03,725 | WARNING  | src.rag.rag_pipeline | Answer contains no [SOURCE N] citations
+2026-06-02 19:25:03,725 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.200, latency=14534ms
+2026-06-02 19:29:21,554 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'Who are the parties in the agreement?...' (top sim=0.743)
+2026-06-02 19:29:21,555 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~615 prompt tokens
+2026-06-02 19:30:56,050 | WARNING  | src.rag.rag_pipeline | Answer contains no [SOURCE N] citations
+2026-06-02 19:30:56,051 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.200, latency=94549ms
+2026-06-02 19:35:45,565 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the governing law?...' (top sim=0.609)
+2026-06-02 19:35:45,566 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~602 prompt tokens
+2026-06-02 19:36:56,283 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=70773ms
+2026-06-02 19:41:49,829 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'How many days notice is required to terminate?...' (top sim=0.789)
+2026-06-02 19:41:49,829 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~684 prompt tokens
+2026-06-02 19:43:59,424 | WARNING  | src.rag.rag_pipeline | Answer contains no [SOURCE N] citations
+2026-06-02 19:43:59,424 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.200, latency=129652ms
+2026-06-02 19:47:03,159 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the confidentiality duration?...' (top sim=0.752)
+2026-06-02 19:47:03,159 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~531 prompt tokens
+2026-06-02 19:48:04,809 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=61690ms
+2026-06-03 13:18:58,678 | INFO     | src.api | Initialising RAG components...
+2026-06-03 13:18:58,679 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-03 13:19:05,072 | INFO     | src.embedding.embedder | Model loaded in 6.39s
+2026-06-03 13:19:05,073 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-03 13:19:05,229 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-03 13:19:05,229 | INFO     | src.api | API ready. Vector store has 40 chunks.
+2026-06-03 14:15:22,847 | INFO     | src.api | Initialising RAG components...
+2026-06-03 14:15:22,848 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-03 14:15:29,127 | INFO     | src.embedding.embedder | Model loaded in 6.28s
+2026-06-03 14:15:29,127 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-03 14:15:29,236 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-03 14:15:29,237 | INFO     | src.api | API ready. Vector store has 40 chunks.
+2026-06-03 14:21:21,735 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-03 14:21:21,736 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-03 14:24:49,684 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=208104ms
+2026-06-03 14:28:29,032 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='f95bcdd86caad1a3'
+2026-06-03 14:28:44,957 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,957 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What are the main parties in this document?'
+2026-06-03 14:28:44,967 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,967 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What are the key obligations?'
+2026-06-03 14:28:44,972 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,972 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What is the termination clause?'
+2026-06-03 14:28:44,977 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,977 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What law governs this agreement?'
+2026-06-03 14:28:44,983 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,983 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What is the liability limitation?'
+2026-06-03 14:28:44,988 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-03 14:28:44,988 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'Are there confidentiality provisions?'
+2026-06-04 17:58:27,814 | INFO     | src.api | Initialising RAG components...
+2026-06-04 17:58:27,815 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-04 17:58:34,042 | INFO     | src.embedding.embedder | Model loaded in 6.23s
+2026-06-04 17:58:34,042 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-04 17:58:34,196 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-04 17:58:34,197 | INFO     | src.api | API ready. Vector store has 0 chunks.
+2026-06-04 18:00:30,193 | INFO     | src.embedding.indexer | 📄 Loading: tmpwato46tv.txt
+2026-06-04 18:00:30,193 | INFO     | src.preprocessing.preprocessor | Loading document: tmpwato46tv.txt
+2026-06-04 18:00:30,193 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpwato46tv.txt
+2026-06-04 18:00:30,197 | INFO     | src.preprocessing.preprocessor | Document 'tmpwato46tv.txt' → 40 chunks
+2026-06-04 18:00:30,198 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-04 18:00:31,313 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 1.1s
+2026-06-04 18:00:31,313 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-04 18:00:31,361 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 40
+2026-06-04 18:00:31,361 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpwato46tv.txt': 40 chunks stored
+2026-06-04 18:00:48,876 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-04 18:00:48,876 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-04 18:03:53,455 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=184621ms
+2026-06-05 07:58:38,864 | INFO     | src.api | Initialising RAG components...
+2026-06-05 07:58:38,866 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-05 07:58:45,240 | INFO     | src.embedding.embedder | Model loaded in 6.37s
+2026-06-05 07:58:45,241 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-05 07:58:45,385 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-05 07:58:45,386 | INFO     | src.api | API ready. Vector store has 40 chunks.
+2026-06-05 07:59:30,993 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-05 07:59:30,994 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-05 08:02:32,448 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=181609ms
+2026-06-06 09:27:57,715 | INFO     | chainlit_app.py | Initialising RAG pipeline...
+2026-06-06 09:27:57,717 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-06 09:28:04,115 | INFO     | src.embedding.embedder | Model loaded in 6.40s
+2026-06-06 09:28:04,115 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: /home/nithan-b-s/Documents/legal_rag_project/legal_rag/data/vectorstore
+2026-06-06 09:28:04,260 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-06 09:28:04,261 | INFO     | chainlit_app.py | RAG pipeline ready. Chunks in store: 40
+2026-06-06 09:28:19,510 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-06 09:28:19,568 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-06 09:28:19,569 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
+2026-06-06 09:32:01,470 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=221957ms

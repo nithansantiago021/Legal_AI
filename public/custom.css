@@ -1,0 +1,61 @@
+/*
+  public/custom.css — Chainlit theme overrides for Lex Legal Intelligence
+  
+  Chainlit 2.x uses Tailwind/Shadcn so we can override CSS variables.
+  Place this file at public/custom.css and it loads automatically.
+*/
+
+/* ── Colour palette ─────────────────────────────────────────── */
+:root {
+  --background:      #0e0e10;
+  --foreground:      #d8d8e8;
+  --card:            #17171b;
+  --card-foreground: #d8d8e8;
+  --primary:         #c9a84c;
+  --primary-foreground: #0e0e10;
+  --secondary:       #1f1f26;
+  --muted:           #2a2a35;
+  --muted-foreground:#6b6b80;
+  --border:          #2e2e3a;
+  --accent:          #c9a84c;
+  --radius:          0.6rem;
+}
+
+/* ── Chat bubble — AI ───────────────────────────────────────── */
+.message-content {
+  line-height: 1.7 !important;
+}
+
+/* ── Source blockquotes ─────────────────────────────────────── */
+blockquote {
+  border-left: 3px solid #c9a84c !important;
+  background: #1f1f26 !important;
+  border-radius: 0 8px 8px 0 !important;
+  padding: 10px 14px !important;
+  margin: 6px 0 !important;
+  color: #9898aa !important;
+  font-size: 0.88rem !important;
+}
+
+/* ── Step accordion (retrieval steps) ──────────────────────── */
+.step-root {
+  border: 1px solid #2e2e3a !important;
+  border-radius: 8px !important;
+  background: #17171b !important;
+  margin: 4px 0 !important;
+}
+
+/* ── Code spans ─────────────────────────────────────────────── */
+code {
+  background: #2a2a35 !important;
+  color: #c9a84c !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
+  font-size: 0.85em !important;
+}
+
+/* ── Header bar ─────────────────────────────────────────────── */
+header {
+  border-bottom: 1px solid #2e2e3a !important;
+  background: #17171b !important;
+}

@@ -1,0 +1,35 @@
+[project]
+# Project name shown in the UI header
+name = "Lex — Legal Intelligence"
+
+# Enable file uploads in the chat input
+[features]
+spontaneous_file_upload.enabled = true
+spontaneous_file_upload.accept = ["application/pdf", "text/plain", "application/json", "text/csv"]
+spontaneous_file_upload.max_files = 5
+spontaneous_file_upload.max_size_mb = 20
+
+# Show the chain-of-thought steps (retrieval steps visible to user)
+expand_messages = false
+
+# Disable unsafe HTML (keep markdown only)
+unsafe_allow_html = false
+
+[UI]
+# Name shown in browser tab
+name = "Lex Legal Intelligence"
+
+# Hide the watermark
+hide_cta = true
+
+# Default chat collapse
+default_collapse_content = false
+
+# Logo and favicon — place custom logo at public/logo.png if desired
+# logo = "public/logo.png"
+
+# Colour theme — dark by default
+default_theme = "dark"
+
+[meta]
+generated_by = "Legal RAG Assistant"
