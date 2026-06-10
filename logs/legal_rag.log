@@ -518,3 +518,168 @@ requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434
 2026-06-06 09:28:19,568 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.726)
 2026-06-06 09:28:19,569 | INFO     | src.rag.rag_pipeline | Calling LLM 'mistral' with ~618 prompt tokens
 2026-06-06 09:32:01,470 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=221957ms
+2026-06-09 19:48:17,030 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 19:48:22,737 | INFO     | src.embedding.embedder | Model loaded in 5.71s
+2026-06-09 19:49:57,890 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 19:50:05,218 | INFO     | src.embedding.embedder | Model loaded in 7.33s
+2026-06-09 19:50:05,218 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-09 19:50:14,901 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 40 documents
+2026-06-09 19:50:14,901 | INFO     | src.embedding.indexer | 📄 Loading: sample_legal_contract.txt
+2026-06-09 19:50:14,901 | INFO     | src.preprocessing.preprocessor | Loading document: sample_legal_contract.txt
+2026-06-09 19:50:14,901 | INFO     | src.embedding.indexer | ✂️  Chunking: sample_legal_contract.txt
+2026-06-09 19:50:14,901 | INFO     | src.preprocessing.preprocessor | Document 'sample_legal_contract.txt' → 40 chunks
+2026-06-09 19:50:14,901 | INFO     | src.embedding.indexer | 🧮 Embedding 40 chunks...
+2026-06-09 19:50:15,257 | INFO     | src.embedding.indexer | ✅ Embedded 40 chunks in 0.4s
+2026-06-09 19:50:15,264 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-09 19:50:15,309 | INFO     | src.embedding.embedder | Upserted 40 chunks; collection now has 80
+2026-06-09 19:50:15,309 | INFO     | src.embedding.indexer | ✅ Indexed 'sample_legal_contract.txt': 40 chunks stored
+2026-06-09 19:50:33,649 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 19:50:39,657 | INFO     | src.embedding.embedder | Model loaded in 6.02s
+2026-06-09 19:50:39,657 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-09 19:50:39,768 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 80 documents
+2026-06-09 19:50:39,838 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'What is the payment due date?...' (top sim=0.766)
+2026-06-09 19:50:39,845 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~451 prompt tokens
+2026-06-09 19:50:43,845 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.700, latency=4075ms
+2026-06-09 19:52:36,553 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 19:52:42,927 | INFO     | src.embedding.embedder | Model loaded in 6.37s
+2026-06-09 19:52:42,927 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-09 19:52:42,991 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 80 documents
+2026-06-09 19:53:13,324 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'explain termination clause?...' (top sim=0.722)
+2026-06-09 19:53:13,325 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~367 prompt tokens
+2026-06-09 19:53:18,354 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.700, latency=5320ms
+2026-06-09 19:56:57,418 | INFO     | chainlit_app.py | Initialising RAG pipeline...
+2026-06-09 19:56:57,419 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 19:57:03,224 | INFO     | src.embedding.embedder | Model loaded in 5.81s
+2026-06-09 19:57:03,224 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-09 19:57:03,288 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 80 documents
+2026-06-09 19:57:03,288 | INFO     | chainlit_app.py | RAG pipeline ready. Chunks in store: 80
+2026-06-09 19:59:19,112 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'explain the termination clause....' (top sim=0.719)
+2026-06-09 19:59:19,230 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'explain the termination clause....' (top sim=0.719)
+2026-06-09 19:59:19,230 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~373 prompt tokens
+2026-06-09 19:59:24,301 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.700, latency=5177ms
+2026-06-09 23:10:10,138 | INFO     | src.api | Initialising RAG components...
+2026-06-09 23:10:10,138 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-09 23:10:15,947 | INFO     | src.embedding.embedder | Model loaded in 5.80s
+2026-06-09 23:10:15,947 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-09 23:10:16,057 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 80 documents
+2026-06-09 23:10:16,057 | INFO     | src.api | API ready. Vector store has 80 chunks.
+2026-06-09 23:18:16,817 | INFO     | src.retrieval.retriever | Retrieved 2 chunks for query 'What is the termination clause?...' (top sim=0.726)
+2026-06-09 23:18:16,817 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~370 prompt tokens
+2026-06-09 23:18:25,796 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.985, latency=9157ms
+2026-06-09 23:20:24,891 | INFO     | src.embedding.indexer | 📄 Loading: tmpw_o1rhjs.pdf
+2026-06-09 23:20:24,891 | INFO     | src.preprocessing.preprocessor | Loading document: tmpw_o1rhjs.pdf
+2026-06-09 23:20:24,941 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpw_o1rhjs.pdf
+2026-06-09 23:20:24,944 | INFO     | src.preprocessing.preprocessor | Document 'tmpw_o1rhjs.pdf' → 95 chunks
+2026-06-09 23:20:24,947 | INFO     | src.embedding.indexer | 🧮 Embedding 95 chunks...
+2026-06-09 23:20:26,122 | INFO     | src.embedding.indexer | ✅ Embedded 95 chunks in 1.2s
+2026-06-09 23:20:26,122 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-09 23:20:26,207 | INFO     | src.embedding.embedder | Upserted 95 chunks; collection now has 175
+2026-06-09 23:20:26,207 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpw_o1rhjs.pdf': 95 chunks stored
+2026-06-09 23:20:34,968 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='73d8140277624aac'
+2026-06-09 23:20:35,932 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='8b3d08fd634d5e64'
+2026-06-09 23:21:40,415 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the address to which insurance notice has ...' (top sim=0.669)
+2026-06-09 23:21:40,415 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~687 prompt tokens
+2026-06-09 23:21:44,196 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=3828ms
+2026-06-09 23:22:27,974 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what does this contract mention?...' (top sim=0.681)
+2026-06-09 23:22:27,974 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~466 prompt tokens
+2026-06-09 23:22:32,509 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=4562ms
+2026-06-09 23:23:52,882 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='496b26038aa48b20'
+2026-06-09 23:24:02,249 | INFO     | src.embedding.indexer | 📄 Loading: tmpvn_2ocbe.pdf
+2026-06-09 23:24:02,255 | INFO     | src.preprocessing.preprocessor | Loading document: tmpvn_2ocbe.pdf
+2026-06-09 23:24:02,282 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpvn_2ocbe.pdf
+2026-06-09 23:24:02,282 | INFO     | src.preprocessing.preprocessor | Document 'tmpvn_2ocbe.pdf' → 29 chunks
+2026-06-09 23:24:02,282 | INFO     | src.embedding.indexer | 🧮 Embedding 29 chunks...
+2026-06-09 23:24:02,525 | INFO     | src.embedding.indexer | ✅ Embedded 29 chunks in 0.2s
+2026-06-09 23:24:02,525 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-09 23:24:02,566 | INFO     | src.embedding.embedder | Upserted 29 chunks; collection now has 29
+2026-06-09 23:24:02,566 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpvn_2ocbe.pdf': 29 chunks stored
+2026-06-09 23:25:09,690 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'List out the definitions in the contract...' (top sim=0.702)
+2026-06-09 23:25:09,690 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~690 prompt tokens
+2026-06-09 23:25:15,694 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.850, latency=6054ms
+2026-06-09 23:26:33,721 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what is the difference between cancellation and re...' (top sim=0.752)
+2026-06-09 23:26:33,721 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~703 prompt tokens
+2026-06-09 23:26:40,948 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=1.000, latency=7282ms
+2026-06-09 23:28:10,090 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='37edc7ae1fbfc40d'
+2026-06-10 11:17:51,062 | INFO     | src.api | Initialising RAG components...
+2026-06-10 11:17:51,062 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-10 11:17:56,874 | INFO     | src.embedding.embedder | Model loaded in 5.81s
+2026-06-10 11:17:56,874 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-10 11:17:57,034 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-10 11:17:57,034 | INFO     | src.api | API ready. Vector store has 0 chunks.
+2026-06-10 11:20:01,421 | INFO     | src.embedding.indexer | 📄 Loading: tmpos4ekeo7.pdf
+2026-06-10 11:20:01,423 | INFO     | src.preprocessing.preprocessor | Loading document: tmpos4ekeo7.pdf
+2026-06-10 11:20:01,514 | INFO     | src.embedding.indexer | ✂️  Chunking: tmpos4ekeo7.pdf
+2026-06-10 11:20:01,522 | INFO     | src.preprocessing.preprocessor | Document 'tmpos4ekeo7.pdf' → 29 chunks
+2026-06-10 11:20:01,528 | INFO     | src.embedding.indexer | 🧮 Embedding 29 chunks...
+2026-06-10 11:20:04,139 | INFO     | src.embedding.indexer | ✅ Embedded 29 chunks in 2.6s
+2026-06-10 11:20:04,141 | INFO     | src.embedding.indexer | 💾 Storing in vector database...
+2026-06-10 11:20:04,328 | INFO     | src.embedding.embedder | Upserted 29 chunks; collection now has 29
+2026-06-10 11:20:04,328 | INFO     | src.embedding.indexer | ✅ Indexed 'tmpos4ekeo7.pdf': 29 chunks stored
+2026-06-10 11:20:25,678 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what are the important clause for the customer to ...' (top sim=0.664)
+2026-06-10 11:20:25,678 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~693 prompt tokens
+2026-06-10 11:20:35,872 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=10470ms
+2026-06-10 11:21:21,439 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'what are the cancellation policy for goods vs supp...' (top sim=0.727)
+2026-06-10 11:21:21,439 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~669 prompt tokens
+2026-06-10 11:21:28,577 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.850, latency=7292ms
+2026-06-10 11:22:28,876 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'main purpose parties involved effective date...' (top sim=0.612)
+2026-06-10 11:22:29,004 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'obligations rights termination liability...' (top sim=0.722)
+2026-06-10 11:22:29,150 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'definitions warranties governing law...' (top sim=0.669)
+2026-06-10 11:23:13,337 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What are the main parties in this document?...' (top sim=0.591)
+2026-06-10 11:23:13,338 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~658 prompt tokens
+2026-06-10 11:23:17,704 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=4509ms
+2026-06-10 11:23:17,861 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What are the key obligations?...' (top sim=0.692)
+2026-06-10 11:23:17,868 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~693 prompt tokens
+2026-06-10 11:23:26,671 | WARNING  | src.rag.rag_pipeline | Answer contains no [SOURCE N] citations
+2026-06-10 11:23:26,676 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.200, latency=8960ms
+2026-06-10 11:23:26,850 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the termination clause?...' (top sim=0.654)
+2026-06-10 11:23:26,850 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~684 prompt tokens
+2026-06-10 11:23:33,224 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.850, latency=6543ms
+2026-06-10 11:23:33,378 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What law governs this agreement?...' (top sim=0.728)
+2026-06-10 11:23:33,385 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~660 prompt tokens
+2026-06-10 11:23:37,009 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=3777ms
+2026-06-10 11:23:37,167 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'What is the liability limitation?...' (top sim=0.803)
+2026-06-10 11:23:37,167 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~668 prompt tokens
+2026-06-10 11:23:41,719 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.700, latency=4706ms
+2026-06-10 11:23:41,887 | INFO     | src.retrieval.retriever | Retrieved 4 chunks for query 'Are there confidentiality provisions?...' (top sim=0.689)
+2026-06-10 11:23:41,887 | INFO     | src.rag.rag_pipeline | Calling LLM 'qwen2.5:7b' with ~695 prompt tokens
+2026-06-10 11:23:46,140 | INFO     | src.rag.rag_pipeline | RAG complete: answerable=True, faithfulness=0.550, latency=4417ms
+2026-06-10 11:26:00,213 | INFO     | src.api | Initialising RAG components...
+2026-06-10 11:26:00,213 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-10 11:26:06,546 | INFO     | src.embedding.embedder | Model loaded in 6.33s
+2026-06-10 11:26:06,546 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-10 11:26:06,614 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 29 documents
+2026-06-10 11:26:06,615 | INFO     | src.api | API ready. Vector store has 29 chunks.
+2026-06-10 11:26:34,959 | INFO     | src.embedding.embedder | Deleted all chunks for doc_id='b610f8f3a2261c5a'
+2026-06-10 17:53:45,293 | INFO     | src.embedding.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+2026-06-10 17:53:50,971 | INFO     | src.embedding.embedder | Model loaded in 5.68s
+2026-06-10 17:53:50,971 | INFO     | src.embedding.embedder | Connecting to ChromaDB at: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\vectorstore
+2026-06-10 17:53:51,043 | INFO     | src.embedding.embedder | Collection 'legal_documents' contains 0 documents
+2026-06-10 17:53:51,043 | WARNING  | src.evaluation.evaluator | No eval file found; using built-in smoke-test questions
+2026-06-10 17:53:51,043 | INFO     | src.evaluation.evaluator | Starting evaluation: 8 questions
+2026-06-10 17:53:51,043 | INFO     | src.evaluation.evaluator | [1/8] Evaluating: What are the main parties in this document?
+2026-06-10 17:53:51,043 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,043 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What are the main parties in this document?'
+2026-06-10 17:53:51,043 | INFO     | src.evaluation.evaluator | [2/8] Evaluating: What are the key obligations of the parties?
+2026-06-10 17:53:51,043 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,051 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What are the key obligations of the parties?'
+2026-06-10 17:53:51,051 | INFO     | src.evaluation.evaluator | [3/8] Evaluating: What is the termination clause?
+2026-06-10 17:53:51,051 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,051 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What is the termination clause?'
+2026-06-10 17:53:51,051 | INFO     | src.evaluation.evaluator | [4/8] Evaluating: What law governs this agreement?
+2026-06-10 17:53:51,051 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,051 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What law governs this agreement?'
+2026-06-10 17:53:51,051 | INFO     | src.evaluation.evaluator | [5/8] Evaluating: What is the liability limitation?
+2026-06-10 17:53:51,051 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,051 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What is the liability limitation?'
+2026-06-10 17:53:51,051 | INFO     | src.evaluation.evaluator | [6/8] Evaluating: Are there any confidentiality provisions?
+2026-06-10 17:53:51,051 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,051 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'Are there any confidentiality provisions?'
+2026-06-10 17:53:51,051 | INFO     | src.evaluation.evaluator | [7/8] Evaluating: What happens in case of breach of contract?
+2026-06-10 17:53:51,054 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,054 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What happens in case of breach of contract?'
+2026-06-10 17:53:51,054 | INFO     | src.evaluation.evaluator | [8/8] Evaluating: What is the payment structure?
+2026-06-10 17:53:51,054 | WARNING  | src.retrieval.retriever | Vector store is empty — cannot retrieve anything
+2026-06-10 17:53:51,054 | WARNING  | src.rag.rag_pipeline | No relevant chunks found for: 'What is the payment structure?'
+2026-06-10 17:53:52,144 | WARNING  | src.evaluation.evaluator | RAGAS not installed. Run: pip install ragas datasets
+2026-06-10 17:53:52,144 | INFO     | src.evaluation.evaluator | Evaluation report saved to: C:\Users\nitha\Documents\Python\GUVI projects\Legal_AI\data\eval_results.json
+2026-06-10 17:53:52,144 | INFO     | src.evaluation.evaluator | EVALUATION SUMMARY: answerable=0.0% | faithfulness=1.000 | latency=1ms

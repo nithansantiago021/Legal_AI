@@ -1,0 +1,214 @@
+SOFTWARE SERVICES AGREEMENT
+
+This Software Services Agreement ("Agreement") is entered into as of January 1, 2024 ("Effective Date"), by and between:
+
+TechCorp Solutions Pvt. Ltd., a company incorporated under the laws of India, with its registered office at 42, Rajiv Gandhi Salai, Chennai, Tamil Nadu 600096 ("Service Provider");
+
+AND
+
+Meridian Enterprises Ltd., a company incorporated under the laws of India, with its registered office at 17, Bandra Kurla Complex, Mumbai, Maharashtra 400051 ("Client").
+
+The Service Provider and the Client are hereinafter referred to individually as a "Party" and collectively as the "Parties."
+
+---
+
+CLAUSE 1 — DEFINITIONS
+
+1.1 "Services" means the software development, maintenance, and support services described in Schedule A attached to this Agreement.
+
+1.2 "Deliverables" means all software, code, documentation, reports, and other materials produced by the Service Provider in the course of providing the Services.
+
+1.3 "Intellectual Property Rights" means all patents, copyrights, trademarks, trade secrets, moral rights, and any other form of intellectual property protection recognized in any jurisdiction.
+
+1.4 "Confidential Information" means any non-public information disclosed by one Party to the other, whether orally, in writing, or by any other means, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure.
+
+1.5 "Force Majeure Event" means any event beyond the reasonable control of a Party, including but not limited to acts of God, natural disasters, war, terrorism, governmental actions, pandemics, or widespread telecommunications failure.
+
+---
+
+CLAUSE 2 — SCOPE OF SERVICES
+
+2.1 The Service Provider agrees to provide the Services to the Client in accordance with the terms and conditions of this Agreement and the specifications set out in Schedule A.
+
+2.2 The Service Provider shall assign a dedicated project manager ("Project Manager") who shall serve as the primary point of contact for all matters relating to the Services.
+
+2.3 The Service Provider shall provide monthly written progress reports to the Client detailing work completed, milestones achieved, and any issues encountered during the reporting period.
+
+2.4 Any changes to the scope of Services must be agreed upon in writing by both Parties through a formal Change Request process. A Change Request shall include a description of the proposed change, estimated cost impact, and revised timeline.
+
+---
+
+CLAUSE 3 — FEES AND PAYMENT
+
+3.1 In consideration for the Services, the Client shall pay the Service Provider the fees specified in Schedule B ("Fees").
+
+3.2 The Service Provider shall issue invoices to the Client on the first business day of each calendar month for Services rendered in the preceding month.
+
+3.3 The Client shall pay all undisputed invoices within thirty (30) calendar days of the invoice date ("Payment Due Date").
+
+3.4 Any amounts not paid by the Payment Due Date shall accrue interest at the rate of eighteen percent (18%) per annum, calculated on a daily basis from the Payment Due Date until the date of actual payment.
+
+3.5 All Fees are exclusive of applicable Goods and Services Tax (GST) and any other taxes, levies, or duties. The Client shall bear all such taxes in addition to the Fees.
+
+3.6 The Client may dispute an invoice by providing written notice to the Service Provider within fifteen (15) days of receipt, specifying the reasons for the dispute. The Parties shall resolve disputed amounts in good faith within thirty (30) days of such notice.
+
+---
+
+CLAUSE 4 — INTELLECTUAL PROPERTY
+
+4.1 All Intellectual Property Rights in the Deliverables created by the Service Provider specifically for the Client under this Agreement shall vest in and be assigned to the Client upon full payment of the applicable Fees.
+
+4.2 Notwithstanding Clause 4.1, the Service Provider retains all Intellectual Property Rights in:
+    (a) its pre-existing proprietary tools, frameworks, libraries, and methodologies ("Background IP");
+    (b) any generic improvements or enhancements to the Background IP developed during the course of providing the Services.
+
+4.3 The Service Provider grants the Client a non-exclusive, non-transferable, royalty-free licence to use the Background IP solely to the extent necessary to utilise the Deliverables for the Client's internal business purposes.
+
+4.4 The Client represents and warrants that all materials, data, and information provided by the Client to the Service Provider for use in providing the Services do not infringe any third-party Intellectual Property Rights.
+
+---
+
+CLAUSE 5 — CONFIDENTIALITY
+
+5.1 Each Party ("Receiving Party") agrees to hold the other Party's ("Disclosing Party") Confidential Information in strict confidence and to use such information only for the purposes of this Agreement.
+
+5.2 The Receiving Party shall not disclose Confidential Information to any third party without the prior written consent of the Disclosing Party, except to its employees, contractors, or professional advisors who have a need to know and are bound by confidentiality obligations at least as stringent as those set forth herein.
+
+5.3 The obligations of confidentiality under this Clause 5 shall not apply to information that:
+    (a) is or becomes publicly available through no fault of the Receiving Party;
+    (b) was rightfully known to the Receiving Party before disclosure;
+    (c) is independently developed by the Receiving Party without use of the Confidential Information;
+    (d) is required to be disclosed by applicable law, court order, or regulatory authority, provided that the Receiving Party gives prompt written notice to the Disclosing Party and cooperates with any efforts to seek a protective order.
+
+5.4 The confidentiality obligations under this Clause 5 shall survive for a period of three (3) years following the termination or expiry of this Agreement.
+
+---
+
+CLAUSE 6 — WARRANTIES AND REPRESENTATIONS
+
+6.1 The Service Provider warrants that:
+    (a) the Services will be performed in a professional and workmanlike manner, consistent with industry standards;
+    (b) the Deliverables will conform materially to the specifications set out in Schedule A;
+    (c) it has the right, power, and authority to enter into this Agreement and to perform the Services;
+    (d) the Deliverables will not, to the Service Provider's knowledge, infringe any third-party Intellectual Property Rights.
+
+6.2 The Client warrants that:
+    (a) it has the right, power, and authority to enter into this Agreement;
+    (b) all information and materials provided to the Service Provider are accurate and do not infringe any third-party rights.
+
+6.3 EXCEPT AS EXPRESSLY SET OUT IN THIS AGREEMENT, NEITHER PARTY MAKES ANY OTHER WARRANTY, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+---
+
+CLAUSE 7 — LIABILITY AND INDEMNIFICATION
+
+7.1 Limitation of Liability. In no event shall either Party be liable to the other Party for any indirect, incidental, consequential, punitive, or special damages, including but not limited to loss of profits, loss of data, or loss of business, even if such Party has been advised of the possibility of such damages.
+
+7.2 Cap on Liability. Each Party's aggregate liability to the other Party arising out of or relating to this Agreement shall not exceed the total Fees paid or payable by the Client in the twelve (12) months immediately preceding the event giving rise to the claim.
+
+7.3 Indemnification by Service Provider. The Service Provider shall indemnify, defend, and hold harmless the Client from and against any third-party claims, damages, losses, and expenses (including reasonable legal fees) arising from:
+    (a) the Service Provider's breach of this Agreement;
+    (b) the negligence or willful misconduct of the Service Provider or its personnel;
+    (c) any infringement of third-party Intellectual Property Rights by the Deliverables.
+
+7.4 Indemnification by Client. The Client shall indemnify, defend, and hold harmless the Service Provider from and against any third-party claims arising from the Client's breach of this Agreement or misuse of the Deliverables.
+
+---
+
+CLAUSE 8 — TERM AND TERMINATION
+
+8.1 Term. This Agreement shall commence on the Effective Date and shall continue for an initial period of two (2) years ("Initial Term"), unless earlier terminated in accordance with this Clause 8.
+
+8.2 Renewal. Upon expiry of the Initial Term, this Agreement shall automatically renew for successive one (1) year periods unless either Party provides written notice of non-renewal at least sixty (60) days prior to the end of the then-current term.
+
+8.3 Termination for Convenience. Either Party may terminate this Agreement for any reason upon providing ninety (90) days' prior written notice to the other Party.
+
+8.4 Termination for Cause. Either Party may terminate this Agreement immediately upon written notice if:
+    (a) the other Party commits a material breach of this Agreement and fails to cure such breach within thirty (30) days of receiving written notice specifying the breach;
+    (b) the other Party becomes insolvent, makes an assignment for the benefit of creditors, or is subject to bankruptcy, liquidation, or similar proceedings.
+
+8.5 Effect of Termination. Upon termination or expiry of this Agreement:
+    (a) all licences granted hereunder shall immediately cease;
+    (b) each Party shall promptly return or destroy the other Party's Confidential Information;
+    (c) the Client shall pay all outstanding Fees for Services rendered up to the date of termination;
+    (d) the Service Provider shall deliver all completed Deliverables and work-in-progress to the Client.
+
+8.6 Survival. Clauses 1, 4, 5, 7, 8.5, and 10 shall survive the termination or expiry of this Agreement.
+
+---
+
+CLAUSE 9 — FORCE MAJEURE
+
+9.1 Neither Party shall be liable for any failure or delay in performing its obligations under this Agreement to the extent caused by a Force Majeure Event, provided that:
+    (a) the affected Party promptly notifies the other Party in writing of the Force Majeure Event and its expected duration;
+    (b) the affected Party uses reasonable efforts to overcome or mitigate the effects of the Force Majeure Event.
+
+9.2 If a Force Majeure Event continues for more than sixty (60) consecutive days, either Party may terminate this Agreement upon thirty (30) days' written notice without liability, except for payment of Fees already due.
+
+---
+
+CLAUSE 10 — GOVERNING LAW AND DISPUTE RESOLUTION
+
+10.1 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of India, without regard to its conflict of laws principles.
+
+10.2 Amicable Resolution. In the event of any dispute, controversy, or claim arising out of or relating to this Agreement ("Dispute"), the Parties shall first attempt to resolve the Dispute amicably through good-faith negotiations for a period of thirty (30) days from the date one Party notifies the other of the Dispute.
+
+10.3 Arbitration. If the Dispute cannot be resolved amicably within the thirty (30) day period, it shall be finally settled by binding arbitration administered by the Mumbai Centre for International Arbitration (MCIA) in accordance with its rules. The arbitration shall be conducted by a sole arbitrator mutually agreed upon by the Parties, or appointed by the MCIA if the Parties cannot agree. The seat of arbitration shall be Mumbai, India. The language of the arbitration shall be English.
+
+10.4 Jurisdiction. Notwithstanding Clause 10.3, each Party irrevocably submits to the exclusive jurisdiction of the courts of Mumbai, India for the purpose of enforcing an arbitral award or seeking interim or injunctive relief.
+
+---
+
+CLAUSE 11 — GENERAL PROVISIONS
+
+11.1 Entire Agreement. This Agreement, together with its Schedules, constitutes the entire agreement between the Parties with respect to its subject matter and supersedes all prior agreements, understandings, and negotiations, whether written or oral.
+
+11.2 Amendments. No amendment to this Agreement shall be valid unless made in writing and signed by authorised representatives of both Parties.
+
+11.3 Waiver. No waiver of any provision of this Agreement shall be effective unless in writing. A failure or delay in exercising any right shall not constitute a waiver of that right.
+
+11.4 Severability. If any provision of this Agreement is held to be invalid or unenforceable, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions shall continue in full force and effect.
+
+11.5 Assignment. Neither Party may assign or transfer its rights or obligations under this Agreement without the prior written consent of the other Party, except that either Party may assign this Agreement in connection with a merger, acquisition, or sale of all or substantially all of its assets.
+
+11.6 Notices. All notices under this Agreement shall be in writing and delivered by registered post with acknowledgment due, courier, or email with confirmed delivery to the addresses specified on the signature page.
+
+11.7 Relationship of Parties. The Parties are independent contractors. Nothing in this Agreement shall be construed to create a partnership, joint venture, employment, or agency relationship between the Parties.
+
+---
+
+SCHEDULE A — SCOPE OF SERVICES
+
+The Service Provider shall provide the following services:
+
+1. Custom Software Development: Design and development of a Customer Relationship Management (CRM) platform as specified in the Technical Requirements Document dated December 1, 2023.
+
+2. Testing and Quality Assurance: Comprehensive unit, integration, and user acceptance testing of all Deliverables prior to deployment.
+
+3. Deployment and Integration: Deployment of the CRM platform on the Client's cloud infrastructure and integration with existing ERP systems.
+
+4. Maintenance and Support: Post-deployment support for twelve (12) months including bug fixes, security patches, and minor enhancements, available during business hours (9:00 AM to 6:00 PM IST, Monday to Friday, excluding public holidays).
+
+---
+
+SCHEDULE B — FEES
+
+Development Phase (Months 1–8):    INR 48,00,000 (Rupees Forty-Eight Lakhs), payable in eight equal monthly instalments of INR 6,00,000.
+
+Maintenance Phase (Months 9–20):   INR 1,50,000 per month.
+
+Change Requests:                    Billed at INR 4,500 per person-hour, subject to written approval.
+
+---
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first written above.
+
+For TechCorp Solutions Pvt. Ltd.:
+Authorised Signatory: Ravi Shankar
+Designation: Chief Executive Officer
+Date: January 1, 2024
+
+For Meridian Enterprises Ltd.:
+Authorised Signatory: Priya Nair
+Designation: Chief Operating Officer
+Date: January 1, 2024

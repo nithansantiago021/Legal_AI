@@ -1,0 +1,38 @@
+# Credentials and Secrets
+.env
+config.py
+secrets.toml
+credentials.json
+
+# Python environment and cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Streamlit specific
+.streamlit/config.toml
+# (Note: Only ignore config.toml if it contains sensitive data)
+
+# Data files
+*.csv
+*.log
+*.sqlite
+*.jpg
+*.png
+*.pt
+*.json
+*.pdf
+
+# Database specific (if you export SQL dumps)
+*.sql
+
+.DS_Store
+.directory
+.Trash-1000
+
+# Node.js dependencies
+node_modules/

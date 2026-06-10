@@ -84,12 +84,12 @@ class ChunkConfig:
 @dataclass
 class LLMConfig:
     provider: str       = os.getenv("LLM_PROVIDER", "ollama")
-    model_name: str     = os.getenv("LLM_MODEL", "mistral")
+    model_name: str     = os.getenv("LLM_MODEL", "qwen2.5:7b")  
     api_key: str        = os.getenv("GROQ_API_KEY", "ollama")
     base_url: str       = os.getenv("LLM_BASE_URL", "http://localhost:11434")
     temperature: float  = 0.1
     max_tokens: int     = 1024
-    timeout: int        = 300      # ← increase from 60 to 120; local models are slower
+    timeout: int        = 180      # ← increase from 60 to 120; local models are slower
 
 # ---------------------------------------------------------------------------
 # Retrieval settings.

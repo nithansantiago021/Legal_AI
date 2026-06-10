@@ -1,31 +1,58 @@
-# ⚖️ Legal Intelligence Assistant — RAG Pipeline
+# Legal Intelligence Assistant
 
-> An end-to-end **Retrieval-Augmented Generation** system for legal document Q&A, clause retrieval, summarisation, and hallucination-aware evaluation.
+A production-grade Retrieval-Augmented Generation (RAG) system for legal document question-answering, clause retrieval, document summarisation, and hallucination-aware response evaluation.
 
 ---
 
-## Architecture Overview
+## Overview
+
+This system allows legal professionals and researchers to upload legal documents — contracts, court judgments, compliance records, NDAs — and query them using natural language. All answers are grounded exclusively in the uploaded document text, with inline source citations and a faithfulness score on every response.
+
+The system supports three frontend interfaces: a Streamlit web application, a Node.js/Express UI, and a Chainlit chat interface. A FastAPI backend and a command-line interface are also included.
+
+---
+
+## Architecture
 
 ```
-User Question
-     │
-     ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                         RAG PIPELINE                                │
-│                                                                     │
-│  ┌──────────┐   embed    ┌────────────┐   top-k   ┌────────────┐  │
-│  │  Query   │──────────▶│  ChromaDB  │──────────▶│  Retriever │  │
-│  │  (BGE)   │           │ VectorStore│           │ (+ rerank) │  │
-│  └──────────┘           └────────────┘           └─────┬──────┘  │
-│                                                         │          │
-│                                                   top-n chunks     │
-│                                                         │          │
-│  ┌───────────┐   prompt  ┌────────────┐   answer  ┌────▼───────┐ │
-│  │ Response  │◀─────────│    LLM     │◀──────────│  Prompt    │ │
-│  │ + Citations│          │(Groq/Ollama)│           │  Builder   │ │
-│  └───────────┘           └────────────┘           └────────────┘ │
-└─────────────────────────────────────────────────────────────────────┘
+User Query
+    |
+    v
+Query Embedder (BGE-small-en-v1.5)
+    |
+    v
+ChromaDB Vector Store  <----  Document Indexing Pipeline
+    |                              |
+    v                         Preprocessor (PDF / TXT / JSON)
+Retriever (top-k ANN + dedup)     |
+    |                         Embedder (BGE-small-en-v1.5)
+    v
+RAG Pipeline
+    |-- Prompt Builder
+    |-- LLM Call (Ollama local / Groq API)
+    |-- Citation Extractor
+    |-- Faithfulness Scorer
+    |
+    v
+Response with [SOURCE N] citations
 ```
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+|---|---|
+| Embedding model | BAAI/bge-small-en-v1.5 (384-dim, retrieval-tuned) |
+| Vector database | ChromaDB (persistent, disk-backed) |
+| LLM backend | Ollama (local) or Groq API (cloud, free tier) |
+| RAG framework | LangChain (text splitting only) |
+| Backend API | FastAPI |
+| Streamlit UI | Streamlit |
+| Chat UI | Chainlit |
+| Premium UI | Node.js + Express |
+| Evaluation | RAGAS |
+| Language | Python 3.10 |
 
 ---
 
@@ -33,175 +60,218 @@ User Question
 
 ```
 legal_rag/
-├── app.py                        # Streamlit UI (main entry point)
-├── cli.py                        # Command-line interface
-├── requirements.txt
-├── .env.example                  # Copy to .env and fill in API keys
-│
-├── config/
-│   └── settings.py               # Centralised configuration (all env vars)
-│
-├── src/
-│   ├── preprocessing/
-│   │   └── preprocessor.py       # PDF/TXT loading, cleaning, chunking
-│   ├── embedding/
-│   │   ├── embedder.py           # BGE-small embedding model + ChromaDB wrapper
-│   │   └── indexer.py            # Orchestrates load → chunk → embed → store
-│   ├── retrieval/
-│   │   └── retriever.py          # Semantic search + optional cross-encoder rerank
-│   ├── rag/
-│   │   └── rag_pipeline.py       # Prompt building, LLM call, citation extraction
-│   ├── evaluation/
-│   │   └── evaluator.py          # RAGAS + custom faithfulness metrics
-│   └── utils/
-│       └── logger.py             # Rotating file + console logger
-│
-├── data/
-│   ├── raw/                      # Drop source documents here
-│   ├── processed/                # Intermediate artefacts
-│   ├── vectorstore/              # ChromaDB persistent index
-│   └── eval_questions.json       # Benchmark questions (optional)
-│
-└── tests/
-    └── test_pipeline.py          # pytest unit tests
+|
+|-- app.py                        Streamlit UI (main entry point)
+|-- chainlit_app.py               Chainlit chat UI
+|-- cli.py                        Command-line interface
+|-- requirements.txt
+|-- .env.example                  Environment variable template
+|
+|-- config/
+|   |-- settings.py               Centralised configuration (all env vars)
+|
+|-- src/
+|   |-- preprocessing/
+|   |   |-- preprocessor.py       Document loading, cleaning, chunking
+|   |-- embedding/
+|   |   |-- embedder.py           BGE model wrapper + ChromaDB client
+|   |   |-- indexer.py            Indexing orchestration
+|   |-- retrieval/
+|   |   |-- retriever.py          Semantic search + deduplication
+|   |-- rag/
+|   |   |-- rag_pipeline.py       Prompt building, LLM call, citation extraction
+|   |-- evaluation/
+|   |   |-- evaluator.py          RAGAS metrics + faithfulness scoring
+|   |-- api.py                    FastAPI REST backend
+|   |-- utils/
+|       |-- logger.py             Rotating file + console logger
+|
+|-- data/
+|   |-- raw/                      Place source documents here
+|   |-- vectorstore/              ChromaDB index (auto-generated)
+|
+|-- tests/
+|   |-- test_pipeline.py          pytest unit tests
+|
+|-- legal_rag_ui/                 Node.js UI (separate folder)
+|   |-- server.js                 Express proxy server
+|   |-- public/index.html         Full browser UI
+|   |-- package.json
 ```
 
 ---
 
-## Quick Start
+## Supported File Formats
 
-### 1. Install dependencies
+- PDF (`.pdf`) — via PyMuPDF
+- Plain text (`.txt`)
+- JSON (`.json`) — Legal Text Classification Dataset format
+
+---
+
+## Setup
+
+### Prerequisites
+
+- Python 3.10
+- Conda or virtualenv
+- Ollama (for local LLM) or a Groq API key (for cloud LLM)
+- Node.js 18+ (only if using the Node.js UI)
+
+### 1. Clone the repository
 
 ```bash
-python -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
+git clone https://github.com/nithansantiago021/Legal_AI.git
+cd legal_rag
+```
+
+### 2. Create the Python environment
+
+```bash
+conda create -n rag python=3.10 -y
+conda activate rag
+```
+
+### 3. Install project dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Configure environment
+### 4. Configure environment variables
 
-```bash
-cp .env.example .env
-# Edit .env and add your GROQ_API_KEY
+Open `.env` and set your LLM backend:
+
+**Ollama (local — recommended):**
+```
+LLM_PROVIDER=ollama
+LLM_MODEL=qwen2.5:7b
+LLM_BASE_URL=http://localhost:11434
+GROQ_API_KEY=ollama
+LOG_LEVEL=INFO
 ```
 
-Get a free Groq API key at https://console.groq.com (no credit card required).
-
-**Or use Ollama (local, fully offline):**
-```bash
-# Install Ollama: https://ollama.ai
-ollama pull mistral:7b-instruct
-# Then edit .env:
-# LLM_PROVIDER=ollama
-# LLM_MODEL=mistral:7b-instruct
-# LLM_BASE_URL=http://localhost:11434/v1
+**Groq API (cloud):**
+```
+LLM_PROVIDER=groq
+LLM_MODEL=llama-3.3-70b-versatile
+LLM_BASE_URL=https://api.groq.com/openai/v1
+GROQ_API_KEY=gsk_your_key_here
+LOG_LEVEL=INFO
 ```
 
-### 3. Launch the Streamlit UI
+### 5. Install Ollama (if using local LLM)
+
+Download from https://ollama.com/download and run the installer. Then pull the required model:
+
+```bash
+ollama pull qwen2.5:7b
+```
+
+Verify Ollama is running:
+```bash
+curl http://localhost:11434/api/tags
+```
+
+---
+
+## Running the Application
+
+### Streamlit UI
 
 ```bash
 streamlit run app.py
+# Opens at http://localhost:8501
 ```
 
-### 4. Or use the CLI
+### Chainlit UI
 
 ```bash
-# Index a directory of documents
+pip install chainlit
+chainlit run chainlit_app.py --watch
+# Opens at http://localhost:8000
+```
+
+### FastAPI + Node.js UI
+
+Open two terminals:
+
+```bash
+# Terminal 1 — FastAPI backend
+uvicorn src.api:app --port 8000 --reload
+
+# Terminal 2 — Node.js UI
+cd legal_rag_ui
+npm install
+node server.js
+# Opens at http://localhost:3000
+```
+
+### Command-line interface
+
+```bash
+# Index a single file
+python cli.py index --file data/raw/contract.pdf
+
+# Index all files in a directory
 python cli.py index --dir data/raw/
 
-# Index a single file
-python cli.py index --file my_contract.pdf
-
-# Query
+# Ask a question
 python cli.py query "What is the termination clause?"
 
-# List indexed documents
+# List all indexed documents
 python cli.py list-docs
 
-# Run evaluation
+# Run evaluation benchmark
 python cli.py evaluate
 ```
 
-### 5. Or start the REST API
+---
+
+## Evaluation
+
+Run the built-in benchmark:
 
 ```bash
-uvicorn src.api:app --reload --port 8000
-# Docs at http://localhost:8000/docs
+python cli.py evaluate
 ```
 
----
+Results are saved to `data/eval_results.json`.
 
-## Datasets
+| Metric | Description | Target |
+|---|---|---|
+| Faithfulness | Answer contains only claims from context | >= 0.8 |
+| Answer Relevancy | Answer addresses the question asked | >= 0.7 |
+| Context Precision | Retrieved chunks are relevant | >= 0.7 |
+| Context Recall | Context covers what is needed | >= 0.6 |
+| Answerable Rate | Percentage of questions the system attempts | >= 80% |
 
-### Primary: Legal Text Classification Dataset
-- Source: https://huggingface.co/datasets/legal_text_classification
-- Format: JSON with `text` and `label` fields
-- Usage: Place downloaded JSON files in `data/raw/`
-
-### Optional: US Court Cases
-- Source: https://huggingface.co/datasets/pile-of-law/pile-of-law
-- Any subset works (court_listener, eur_parl, etc.)
-
----
-
-## Tech Stack
-
-| Component | Technology | Reason |
-|-----------|-----------|--------|
-| Embeddings | BGE-small-en-v1.5 | Best retrieval accuracy per parameter for legal English |
-| Vector DB | ChromaDB | Local-first, no server required, excellent Python API |
-| LLM | Groq / Ollama | Groq: fast inference; Ollama: fully local for confidential documents |
-| Framework | LangChain | Mature text splitting; avoids reinventing chunking logic |
-| API | FastAPI | High-performance async, auto-generated OpenAPI docs |
-| UI | Streamlit | Fast iteration, suited to data science prototypes |
-| Evaluation | RAGAS | Framework-native RAG metrics; no ground truth required |
+Full RAGAS evaluation requires a Groq or OpenAI API key. The built-in benchmark runs without any external API.
 
 ---
 
-## Evaluation Metrics
+## Recommended Models (Ollama)
 
-| Metric | Goal | Description |
-|--------|------|-------------|
-| Faithfulness | ≥ 0.8 | Answer contains only claims from context |
-| Answer Relevancy | ≥ 0.7 | Answer addresses the actual question |
-| Context Precision | ≥ 0.7 | Retrieved chunks are relevant |
-| Context Recall | ≥ 0.6 | Context covers what's needed |
-| Answerable Rate | ≥ 80% | % of questions the system attempts |
+| Use Case | Model | VRAM | Notes |
+|---|---|---|---|
+| RAG / Legal Q&A | qwen2.5:7b | ~4.8 GB | Best citation following |
+| RAG / Legal Q&A | mistral | ~4.5 GB | Reliable, fast |
+| Coding | qwen2.5-coder:7b | ~4.8 GB | Best at 8 GB VRAM |
+| Agents / Tool use | qwen3:8b | ~5 GB | Native tool calling |
+| Heavy reasoning | phi4 | ~8 GB | 14B quality at Q4 |
 
 ---
 
 ## Key Design Decisions
 
-**Why BGE-small over all-MiniLM-L6-v2?**
-BGE models are fine-tuned specifically for retrieval (not just similarity), and use an asymmetric query instruction technique that significantly boosts recall. all-MiniLM is a good general-purpose model but BGE outperforms it on retrieval benchmarks.
+**BGE-small over all-MiniLM:** BGE models are fine-tuned specifically for retrieval tasks, not general similarity. They use an asymmetric query instruction technique that significantly improves recall. The instruction prefix is applied to queries only, not to document chunks — this asymmetry is intentional and matches the BGE training procedure.
 
-**Why character-based chunking instead of token-based?**
-Legal prose is dense and contains very long sentences. Character-based chunks at ~512 chars are safely within BGE-small's 512-token context limit (English legal text averages ~4 chars/token), and don't require a tokenizer in the preprocessing step.
+**Character-based chunking:** Legal sentences are long and dense. Character-based chunks at 512 characters are safely within BGE-small's 512-token context limit without requiring a tokenizer in the preprocessing step. English legal prose averages approximately 4 characters per token.
 
-**Why set temperature to 0.1 for the LLM?**
-Legal answers must be reproducible and factually grounded. Higher temperature introduces creative variation that can drift from the source text. 0.1 keeps outputs near-deterministic while allowing natural phrasing variation.
+**Temperature 0.1:** Legal answers must be reproducible and factually grounded. Higher temperature introduces variation that can drift from the source text.
 
-**Why UNANSWERABLE as a first-class response?**
-Silently hallucinating an answer is far more dangerous in a legal context than admitting ignorance. The system is explicitly prompted to declare UNANSWERABLE when the context is insufficient.
+**UNANSWERABLE as a first-class signal:** The system prompt explicitly instructs the model to return `UNANSWERABLE: [reason]` rather than speculate when the context is insufficient. A hallucinated legal clause is more harmful than a declared inability to answer.
+
+**Native Ollama API over OpenAI wrapper:** The system calls Ollama's `/api/chat` endpoint directly rather than the OpenAI-compatibility layer at `/v1/chat/completions`. This avoids version-dependent compatibility issues with local Ollama installations.
 
 ---
-
-## Running Tests
-
-```bash
-pytest tests/ -v
-```
-
----
-
-## Project Deliverables Checklist
-
-- [x] Source code (modular, documented)
-- [x] Streamlit application (`app.py`)
-- [x] FastAPI backend (`src/api.py`)
-- [x] Retrieval evaluation (`src/evaluation/evaluator.py`)
-- [x] CLI (`cli.py`)
-- [x] Unit tests (`tests/`)
-- [ ] Demo video *(record with OBS or Loom after running locally)*
-- [ ] Architecture diagram *(export from draw.io or Lucidchart)*
-- [ ] Evaluation report *(generated automatically at `data/eval_results.json`)*
