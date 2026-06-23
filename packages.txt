@@ -2,3 +2,7 @@
 # Required by PyMuPDF (libmupdf) on the HF Spaces Ubuntu image
 libgl1-mesa-glx
 libglib2.0-0
+build-essential
+python3-dev
+cmake
+g++
