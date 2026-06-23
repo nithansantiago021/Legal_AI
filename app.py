@@ -150,7 +150,7 @@ html, body, [data-testid="stAppViewContainer"] {
 
 @st.cache_resource(show_spinner="Loading embedding model…")
 def _load_embedder():
-    """BGE-small-en-v1.5 — 33 MB, loaded once per process cold start."""
+    """mpnet-base-v2, loaded once per process cold start."""
     from src.embedding.embedder import Embedder
     return Embedder()
 
@@ -681,7 +681,7 @@ def _render_instructions_tab() -> None:
         '<div class="feature-card">'
         '<div class="feature-icon">🔍</div>'
         '<div class="feature-title">Semantic Retrieval</div>'
-        '<div class="feature-desc">BGE-small-en-v1.5 embeddings + ChromaDB cosine search '
+        '<div class="feature-desc">mpnet-base-v2 embeddings + ChromaDB cosine search '
         'surface the most relevant passages — not just keyword matches.</div>'
         '</div>'
 
@@ -728,7 +728,7 @@ def _render_instructions_tab() -> None:
         '<div class="feature-card">'
         '<div class="feature-icon">⚡</div>'
         '<div class="feature-title">Fast Inference</div>'
-        '<div class="feature-desc">Groq&#39;s hardware delivers LLaMA 3.3 70B responses in '
+        '<div class="feature-desc">Groq&#39;s hardware delivers gpt-oss-120b responses in '
         '2–6 seconds — even on complex multi-clause legal questions.</div>'
         '</div>'
 
