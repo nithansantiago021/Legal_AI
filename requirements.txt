@@ -1,18 +1,9 @@
-# ── Core RAG stack ─────────────────────────────────────────────────────────────
 streamlit>=1.35.0
 chromadb>=0.5.0
-sentence-transformers>=3.0.0    # BGE embedder + ms-marco cross-encoder
+sentence-transformers>=3.0.0
 langchain-text-splitters>=0.2.0
-
-# ── Document parsing ───────────────────────────────────────────────────────────
-pymupdf>=1.24.0                 # PDF extraction (fitz)
-
-# ── LLM backend (Groq via OpenAI-compatible client) ───────────────────────────
+pymupdf>=1.24.0
 groq
 openai>=1.30.0
-
-# ── CPU-only PyTorch — avoids pulling CUDA wheels on HF free tier ─────────────
-torch>=2.2.0
-
-# ── Utilities ──────────────────────────────────────────────────────────────────
+torch>=2.2.0 --extra-index-url https://download.pytorch.org/whl/cpu
 requests>=2.31.0
