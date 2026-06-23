@@ -1,8 +1,6 @@
-# System packages installed via apt before pip
-# Required by PyMuPDF (libmupdf) on the HF Spaces Ubuntu image
-libgl1-mesa-glx
-libglib2.0-0
 build-essential
 python3-dev
 cmake
 g++
+libgl1
+libglib2.0-0
