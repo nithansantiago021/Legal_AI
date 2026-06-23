@@ -1,14 +1,14 @@
 ---
-title: Streamlit Template Space
+title: Legal Rag Assistance
 emoji: 🚀
 colorFrom: red
 colorTo: red
 sdk: docker
 app_port: 8501
 tags:
-  - streamlit
+- streamlit
 pinned: false
-short_description: Streamlit template space
+short_description: RAG system for QA, clause retrieval and summarisation
 ---
 
 # Welcome to Streamlit!
