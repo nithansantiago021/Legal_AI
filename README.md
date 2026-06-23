@@ -7,7 +7,7 @@ sdk: streamlit
 sdk_version: 1.35.0
 app_file: app.py
 pinned: false
-short_description: RAG assistant for legal documents — session-isolated, zero persistence
+short_description: RAG assistant for legal
 ---
 
 # Legal Intelligence Assistant
