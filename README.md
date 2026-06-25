@@ -57,11 +57,11 @@ User Question
 
 ## Technical Stack
 
-- **Embeddings**: `sentence-transformers/all-mpnet-base-v2` — runs on cpu
+- **Embeddings**: `sentence-transformers/all-mpnet-base-v2` 
 - **Vector DB**: ChromaDB `EphemeralClient` — zero disk writes
 - **LLM**: Groq `openai/gpt-oss-120b` — fast inference, free tier available
 - **Chunking**: LangChain `RecursiveCharacterTextSplitter` (800 chars, 100 overlap)
-- **Re-ranking**: Disabled on free tier (too slow on CPU); enable in `config/settings.py`
+- **Re-ranking**: `cross-encoder/ms-marco-MiniLM-L-6-v2` 
 - **UI**: Streamlit with custom dark theme
 
 ## Clear Session Data
@@ -75,13 +75,11 @@ Click **"🗑️ Clear Session Data"** in the sidebar at any time to instantly w
 ## Local Development
 
 ```bash
-git clone <your-repo>
+git clone https://huggingface.co/spaces/ntini97/legal-rag-assistance
 cd legal-rag-assistant
 pip install -r requirements.txt
 streamlit run app.py
 ```
-
-Set your Groq key in the sidebar — no `.env` file needed.
 
 ## Project Structure
 
@@ -95,7 +93,7 @@ Set your Groq key in the sidebar — no `.env` file needed.
     ├── preprocessing/
     │   └── preprocessor.py         # PDF/TXT/CSV/JSON extraction + chunking
     ├── embedding/
-    │   ├── embedder.py             # BGE model + ephemeral ChromaDB wrapper
+    │   ├── embedder.py             # MPNet model + ephemeral ChromaDB wrapper
     │   └── indexer.py              # index_file() / index_directory()
     ├── retrieval/
     │   └── retriever.py            # Semantic search + deduplication
@@ -107,5 +105,5 @@ Set your Groq key in the sidebar — no `.env` file needed.
 
 ## Limitations (Free Tier)
 
-- No GPU — embedding is CPU-only (~1-3s per document page)
-- Groq free tier has rate limits — for heavy use, consider a paid plan
+- No GPU, embedding is CPU-only (~1-3s per document page)
+- Groq free tier has rate limits — for heavy use, consider a paid plan.
