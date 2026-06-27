@@ -30,8 +30,8 @@ class VectorStoreConfig:
 
 @dataclass
 class ChunkingConfig:
-    chunk_size: int = 800
-    chunk_overlap: int = 100
+    chunk_size: int = 1024
+    chunk_overlap: int = 128
     separators: list = field(default_factory=lambda: ["\n\n", "\n", ". ", " ", ""])
 
 
@@ -53,7 +53,7 @@ class RetrievalConfig:
 @dataclass
 class LLMConfig:
     provider: str = "groq"
-    model_name: str = "openai/gpt-oss-120b"
+    model_name: str = "llama-3.3-70b-versatile"
     judge_model: str = "llama-3.1-8b-instant"   # fast model used as RAGAS NLI judge
     temperature: float = 0.1
     max_tokens: int = 1024
