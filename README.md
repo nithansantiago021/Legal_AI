@@ -49,7 +49,7 @@ User Question
  [RAGPipeline]  prompt construction + citation template
      │
      ▼
- [Groq LLM]  openai/gpt-oss-120b (user's own key)
+ [Groq LLM]  llama-3.3-70b-versatile (user's own key)
      │
      ▼
  Cited Answer  [SOURCE 1], [SOURCE 2], …
@@ -59,7 +59,7 @@ User Question
 
 - **Embeddings**: `sentence-transformers/all-mpnet-base-v2` 
 - **Vector DB**: ChromaDB `EphemeralClient` — zero disk writes
-- **LLM**: Groq `openai/gpt-oss-120b` — fast inference, free tier available
+- **LLM**: Groq `llama-3.3-70b-versatile` — fast inference, free tier available
 - **Chunking**: LangChain `RecursiveCharacterTextSplitter` (800 chars, 100 overlap)
 - **Re-ranking**: `cross-encoder/ms-marco-MiniLM-L-6-v2` 
 - **UI**: Streamlit with custom dark theme
