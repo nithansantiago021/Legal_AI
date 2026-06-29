@@ -52,7 +52,7 @@ User Question
 - **Embeddings**: `sentence-transformers/all-mpnet-base-v2` 
 - **Vector DB**: ChromaDB `EphemeralClient` — zero disk writes
 - **LLM**: Groq `llama-3.3-70b-versatile` — fast inference, free tier available
-- **Chunking**: LangChain `RecursiveCharacterTextSplitter` (800 chars, 100 overlap)
+- **Chunking**: LangChain `RecursiveCharacterTextSplitter` (1024 chars, 128 overlap)
 - **Re-ranking**: `cross-encoder/ms-marco-MiniLM-L-6-v2` 
 - **UI**: Streamlit with custom dark theme
 
