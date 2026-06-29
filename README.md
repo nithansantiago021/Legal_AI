@@ -16,6 +16,10 @@ short_description: RAG assistant for legal
 
 A **Retrieval-Augmented Generation (RAG)** system for legal document analysis. Upload contracts, agreements, or any legal PDF and ask questions — all grounded in cited source passages.
 
+Live Demo: https://ntini97-legal-rag-assistance.hf.space/
+
+![Screenshot](Assets/app.jpeg)
+
 ## Quick Start
 
 1. **Get a free Groq API key** at [console.groq.com](https://console.groq.com)
