@@ -14,16 +14,6 @@ short_description: RAG assistant for legal
 
 A **Retrieval-Augmented Generation (RAG)** system for legal document analysis. Upload contracts, agreements, or any legal PDF and ask questions — all grounded in cited source passages.
 
-## Privacy Guarantees
-
-| What | Guarantee |
-|------|-----------|
-| Uploaded documents | Deleted from disk immediately after indexing |
-| Embeddings / vector store | In-memory only (ChromaDB EphemeralClient) — gone on session end |
-| Chat history | Browser session only — never persisted |
-| Groq API key | Session RAM only — never written to disk, env vars, or logs |
-| Cross-user isolation | Each session has its own independent vector store |
-
 ## Quick Start
 
 1. **Get a free Groq API key** at [console.groq.com](https://console.groq.com)
@@ -75,7 +65,7 @@ Click **"🗑️ Clear Session Data"** in the sidebar at any time to instantly w
 ## Local Development
 
 ```bash
-git clone https://huggingface.co/spaces/ntini97/legal-rag-assistance
+git clone https://github.com/nithansantiago021/Legal_AI.git
 cd legal-rag-assistant
 pip install -r requirements.txt
 streamlit run app.py
