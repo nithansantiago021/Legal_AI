@@ -1,3 +1,4 @@
+<!--
 ---
 title: Legal Intelligence Assistant
 emoji: ⚖️
@@ -9,6 +10,7 @@ app_file: app.py
 pinned: false
 short_description: RAG assistant for legal
 ---
+-->
 
 # Legal Intelligence Assistant
 
