@@ -1,22 +1,6 @@
-<!--
----
-title: Legal Intelligence Assistant
-emoji: ⚖️
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.35.0
-app_file: app.py
-pinned: false
-short_description: RAG assistant for legal
----
--->
-
 # Legal Intelligence Assistant
 
 A **Retrieval-Augmented Generation (RAG)** system for legal document analysis. Upload contracts, agreements, or any legal PDF and ask questions — all grounded in cited source passages.
-
-Live Demo: https://ntini97-legal-rag-assistance.hf.space/
 
 ![Screenshot](Assets/app.jpeg)
 
